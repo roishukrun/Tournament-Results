@@ -4,9 +4,10 @@ const request = require("request");
 
 const app = express();
 
-const BASE_URL = "http://localhost:20000";
+const BASE_URL = "http://localhost:20000"; // The base URL of the real API server.
 const PORT = 5000;
 
+/* Used to fix CORS error while trying to fetch from different domain. */
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   next();
